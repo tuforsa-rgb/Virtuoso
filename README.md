@@ -34,6 +34,13 @@ Load a sheet or a MIDI file, press **F8** in the game, and listen.
 | 🌏 **7 languages** | English, Tiếng Việt, 简体中文, Français, 日本語, 한국어, हिन्दी. |
 | 🔔 **System tray** | Keeps running quietly in the tray; play, pause and stop from the tray menu. |
 | 🔄 **Automatic updates** | Virtuoso tells you when a new version is out and installs it in one click. Every update is digitally signed and checked before it runs. |
+| 📂 **Your own folders** | Click **Open folder** and every sheet and MIDI file in it shows up in the list, sub-folders included. Files stay where they are, and new ones appear by themselves. You can also drag files or folders onto the window. |
+| ✨ **Follow along** | While a song plays, the note being played lights up in the sheet and the editor scrolls with it. An on-screen piano shows which keys are pressed. |
+| 🪟 **Compact & always on top** | Switch to a small player that sits next to the game (<kbd>Ctrl</kbd>+<kbd>M</kbd>) and pin it above the game (<kbd>Ctrl</kbd>+<kbd>T</kbd>). The song list is one click away. |
+
+<p align="center">
+  <img src="assets/screenshot-compact.png" alt="Compact mode while playing" width="46%">
+</p>
 
 <p align="center">
   <img src="assets/screenshot-midi.png" alt="Choosing MIDI tracks" width="88%">
@@ -52,7 +59,7 @@ Load a sheet or a MIDI file, press **F8** in the game, and listen.
 
 ## 🚀 Quick start
 
-1. Click **+ Import** and choose sheets (`.txt`) or MIDI files (`.mid`) — or click **New song** and paste a sheet.
+1. Click **+ Import** and choose sheets (`.txt`) or MIDI files (`.mid`), click **Open folder** to list a whole folder — or click **New song** and paste a sheet.
 2. Select the song in the list and check the tempo.
 3. Open your piano game and click into the game window.
 4. Press **F8** to start. Virtuoso counts down, then plays.
@@ -68,6 +75,20 @@ Load a sheet or a MIDI file, press **F8** in the game, and listen.
 | <kbd>F7</kbd> | Faster |
 
 The hotkeys work while the game is in front and are not passed on to the game.
+
+Inside Virtuoso:
+
+| Keys | Action |
+|:---:|---|
+| <kbd>Ctrl</kbd>+<kbd>M</kbd> | Compact mode on/off |
+| <kbd>Ctrl</kbd>+<kbd>T</kbd> | Always on top on/off |
+| <kbd>Ctrl</kbd>+<kbd>O</kbd> | Import files |
+| <kbd>Ctrl</kbd>+<kbd>Shift</kbd>+<kbd>O</kbd> | Open a folder |
+| <kbd>Ctrl</kbd>+<kbd>F</kbd> | Search songs (in the editor: search the sheet) |
+| <kbd>Ctrl</kbd>+<kbd>S</kbd> | Save |
+| <kbd>F5</kbd> | Read the folders again |
+
+Right-click a line in the sheet editor and choose **Play from this line** to start there.
 
 ## 🎼 Sheet formats
 
@@ -169,6 +190,15 @@ In `%AppData%\Virtuoso\Songs`. Click **Open folder** in the app to go there. Uni
 Virtuoso does not collect or send any personal data. The only internet access is the update check, which downloads release information from this page.
 
 ## 📝 Changelog
+
+**1.3.0**
+- Compact mode: a small player to keep next to the game; the song list folds into a button.
+- Always on top: keep Virtuoso above the game (pin button, <kbd>Ctrl</kbd>+<kbd>T</kbd> or the tray menu).
+- Open folder: every sheet and MIDI file in a folder (and its sub-folders) shows up in the list; new files appear by themselves.
+- The note being played lights up in the sheet and the editor follows it; an on-screen piano shows the keys.
+- New sheet editor with line numbers and colours.
+- Smoother screen updates while playing, faster search.
+- Drag and drop, "Play from this line", deleted songs go to the Recycle Bin, the window remembers its size and place.
 
 **1.2.0**
 - New look: a brand-new app icon and logo, plus new artwork in the installer and the welcome screen.
