@@ -36,8 +36,9 @@ Load a sheet or a MIDI file, press **F8** in the game, and listen.
 | 🔄 **Automatic updates** | Virtuoso tells you when a new version is out and installs it in one click. Every update is digitally signed and checked before it runs. |
 | 📂 **Your own folders** | Click **Open folder** and every sheet and MIDI file in it shows up in the list, sub-folders included. Files stay where they are, and new ones appear by themselves. You can also drag files or folders onto the window. |
 | ✨ **Follow along** | While a song plays, the note being played lights up in the sheet and the editor scrolls with it. An on-screen piano shows which keys are pressed. |
-| 📷 **Scan sheet music** <sup>beta</sup> | Cut a page of piano sheet music with <kbd>Win</kbd>+<kbd>Shift</kbd>+<kbd>S</kbd> and press <kbd>Ctrl</kbd>+<kbd>V</kbd> in Virtuoso — or drop images or a PDF on the window. Virtuoso reads the notes and writes a sheet you can play right away, with the original pages beside the editor so you can check and fix it. |
+| 📷 **Scan sheet music** <sup>beta</sup> | Cut a page of piano sheet music with <kbd>Win</kbd>+<kbd>Shift</kbd>+<kbd>S</kbd> and press <kbd>Ctrl</kbd>+<kbd>V</kbd> in Virtuoso — or drop images or a PDF on the window. Virtuoso reads the notes, D.S./D.C./Coda jumps included, and writes a sheet you can play right away. The original pages sit beside the editor: the bar being edited or played is marked on them, and clicking a bar jumps to its line. |
 | ⏩ **Seek** | Click or drag on the progress bar to jump anywhere in the song — also while it plays into the game. |
+| 🔁 **Loop a part** | Select some lines and click 🔁 to play them over and over, seamlessly — or right-click the time bar to set A and B. Nothing selected loops the whole song. |
 | 🤝 **Share with a friend** | Link a folder you both sync (Google Drive, OneDrive…): sheets you scan into it show up in your friend's Virtuoso by themselves, original pages included. |
 | 🔊 **Listen first** | The speaker button plays the song through your speakers, without sending any keys to the game. |
 | 🧾 **MusicXML** | Import `.musicxml` / `.mxl` files from MuseScore, Finale, Sibelius and others; repeats and 1st/2nd endings are written out. |
@@ -99,17 +100,20 @@ Inside Virtuoso:
 
 Right-click a line in the sheet editor and choose **Play from this line** to start there.
 
+**Loop a part:** select the lines in the editor and click the 🔁 button next to the time (or right-click → **Loop these lines**). With nothing selected, the whole song loops. You can also right-click the time bar and choose **Loop from here (A)** / **Loop up to here (B)** — this works for MIDI files too. Click 🔁 again to stop looping.
+
 ## 📷 Scanning sheet music (beta)
 
 1. Press <kbd>Win</kbd>+<kbd>Shift</kbd>+<kbd>S</kbd>, cut out the first page of the sheet, then press <kbd>Ctrl</kbd>+<kbd>V</kbd> in Virtuoso. The **Scan sheet images** window opens with that page.
 2. Cut the next page and press <kbd>Ctrl</kbd>+<kbd>V</kbd> again — pages are added in order (use **Up** / **Down** if needed). You can also add image files or a whole PDF.
 3. Press **Scan**. It takes about 10–30 seconds per page. Title and tempo are read from the sheet; you can also type them.
 4. The new sheet opens in the editor with the **Original pages** beside it. Press the 🔊 button to listen, and fix what sounds wrong.
+5. The bar you are editing — or playing — is marked on the original pages. Click a bar on a page to jump to its line in the editor (while playing, the music jumps there too).
 
 The first scan downloads the scanner once (about 69 MB, plus 23 MB to read titles and tempo marks). It is [Audiveris](https://github.com/Audiveris/audiveris), free open-source music recognition, and everything runs on your computer — no pages are uploaded anywhere.
 
 > [!TIP]
-> Results are best with clean, straight pages of printed piano music: a full-width screenshot or a PDF works better than a photo taken at an angle. Notes usually come out right; the rhythm can still be off in a few bars, and D.S./D.C. jumps are not read yet.
+> Results are best with clean, straight pages of printed piano music: a full-width screenshot or a PDF works better than a photo taken at an angle. Notes usually come out right; the rhythm can still be off in a few bars. D.S., D.C., To Coda, Fine and the segno/coda signs are read, and the song is written out in playing order (a note at the top of the sheet says what was found). Linking bars to the pages works for pictures, not PDFs yet.
 
 ## 🤝 Sharing songs with a friend
 
@@ -221,6 +225,11 @@ In `%AppData%\Virtuoso\Songs`. Click **Open folder** in the app to go there. Uni
 Virtuoso does not collect or send any personal data. The only internet access is the update check, which downloads release information from this page, and — only when you scan sheet music for the first time — the download of the scanner from this page. Scanning itself runs entirely on your computer.
 
 ## 📝 Changelog
+
+**1.3.8** — pages linked to the sheet, loops, D.S./Coda
+- The original pages of a scanned song follow the sheet: the bar at the caret, or being played, is marked on its page and the page scrolls along. Click a bar on a page to jump to its line (also while playing); click a repeated bar again for its next time.
+- A–B loop: select lines and click 🔁 (or right-click → **Loop these lines**), or set A and B with a right-click on the time bar. Nothing selected loops the whole song. The loop is seamless.
+- Scanning reads D.S., D.C., To Coda and Fine, finds segno and coda signs on the page, and writes the song out in playing order.
 
 **1.3.7** — seek, shared folders, automatic titles
 - Seek: click or drag on the progress bar to jump anywhere, also while playing (the focus goes back to the game and the song carries on). When stopped, it picks where Play starts.
