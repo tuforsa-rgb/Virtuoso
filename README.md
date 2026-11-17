@@ -37,6 +37,8 @@ Load a sheet or a MIDI file, press **F8** in the game, and listen.
 | 📂 **Your own folders** | Click **Open folder** and every sheet and MIDI file in it shows up in the list, sub-folders included. Files stay where they are, and new ones appear by themselves. You can also drag files or folders onto the window. |
 | ✨ **Follow along** | While a song plays, the note being played lights up in the sheet and the editor scrolls with it. An on-screen piano shows which keys are pressed. |
 | 📷 **Scan sheet music** <sup>beta</sup> | Cut a page of piano sheet music with <kbd>Win</kbd>+<kbd>Shift</kbd>+<kbd>S</kbd> and press <kbd>Ctrl</kbd>+<kbd>V</kbd> in Virtuoso — or drop images or a PDF on the window. Virtuoso reads the notes and writes a sheet you can play right away, with the original pages beside the editor so you can check and fix it. |
+| ⏩ **Seek** | Click or drag on the progress bar to jump anywhere in the song — also while it plays into the game. |
+| 🤝 **Share with a friend** | Link a folder you both sync (Google Drive, OneDrive…): sheets you scan into it show up in your friend's Virtuoso by themselves, original pages included. |
 | 🔊 **Listen first** | The speaker button plays the song through your speakers, without sending any keys to the game. |
 | 🧾 **MusicXML** | Import `.musicxml` / `.mxl` files from MuseScore, Finale, Sibelius and others; repeats and 1st/2nd endings are written out. |
 | 🪟 **Compact & always on top** | Switch to a small player that sits next to the game (<kbd>Ctrl</kbd>+<kbd>M</kbd>) and pin it above the game (<kbd>Ctrl</kbd>+<kbd>T</kbd>). The song list is one click away. |
@@ -104,10 +106,20 @@ Right-click a line in the sheet editor and choose **Play from this line** to sta
 3. Press **Scan**. It takes about 10–30 seconds per page. Title and tempo are read from the sheet; you can also type them.
 4. The new sheet opens in the editor with the **Original pages** beside it. Press the 🔊 button to listen, and fix what sounds wrong.
 
-The first scan downloads the scanner once (about 69 MB, plus 22 MB to read titles and tempo marks). It is [Audiveris](https://github.com/Audiveris/audiveris), free open-source music recognition, and everything runs on your computer — no pages are uploaded anywhere.
+The first scan downloads the scanner once (about 69 MB, plus 23 MB to read titles and tempo marks). It is [Audiveris](https://github.com/Audiveris/audiveris), free open-source music recognition, and everything runs on your computer — no pages are uploaded anywhere.
 
 > [!TIP]
 > Results are best with clean, straight pages of printed piano music: a full-width screenshot or a PDF works better than a photo taken at an angle. Notes usually come out right; the rhythm can still be off in a few bars, and D.S./D.C. jumps are not read yet.
+
+## 🤝 Sharing songs with a friend
+
+Virtuoso has no account and no server: you share songs through a folder that both of you sync, for example with Google Drive or OneDrive.
+
+1. One of you creates a folder in Google Drive (say **Our Piano Sheets**) and shares it with the other. Both install **Google Drive for desktop** so the folder is on your computers.
+2. In Virtuoso, both click **Open folder** and pick that folder.
+3. When you scan, choose the folder under **Save to**. The sheet is saved there as a `.txt` file with its original pages, and your friend's Virtuoso shows the new song by itself within a few seconds (at most ~30 s).
+
+Any `.txt` or `.mid` file either of you puts in the folder appears too, and when one of you fixes a sheet, the other sees the new version.
 
 ## 🎼 Sheet formats
 
@@ -210,6 +222,11 @@ Virtuoso does not collect or send any personal data. The only internet access is
 
 ## 📝 Changelog
 
+**1.3.7** — seek, shared folders, automatic titles
+- Seek: click or drag on the progress bar to jump anywhere, also while playing (the focus goes back to the game and the song carries on). When stopped, it picks where Play starts.
+- Share songs through a synced folder: scans can be saved straight into a linked folder (with their pages), and songs a friend adds or changes there show up by themselves.
+- Scans name themselves after the title printed on the sheet, accented Vietnamese titles included.
+
 **1.3.6** — better scans, no lag on top
 - Scanning is much more accurate: pages are sharpened before they are read, so far fewer rests, dots and flags are lost; scanned bars always keep their real length.
 - The tempo printed on the sheet ("♩ = 90") is read; if there is none, type the BPM in the scan window. The printed title is used when you leave the title empty.
@@ -250,4 +267,4 @@ Virtuoso is an independent product and is **not affiliated with, endorsed by or 
 
 © 2026 Virtuoso. All rights reserved. Use of the software is subject to the license agreement shown in the installer.
 
-The optional sheet scanner is [Audiveris](https://github.com/Audiveris/audiveris) 5.10.2, © Hervé Bitteur and the Audiveris contributors, licensed under the [GNU AGPL-3.0](https://github.com/Audiveris/audiveris/blob/5.10.2/LICENSE). It is downloaded separately, unchanged, and runs as its own program; its complete source code is at [github.com/Audiveris/audiveris/tree/5.10.2](https://github.com/Audiveris/audiveris/tree/5.10.2). Titles and tempo marks are read with the English data of [Tesseract](https://github.com/tesseract-ocr/tessdata/tree/4.1.0) (Apache-2.0), downloaded from the Tesseract project.
+The optional sheet scanner is [Audiveris](https://github.com/Audiveris/audiveris) 5.10.2, © Hervé Bitteur and the Audiveris contributors, licensed under the [GNU AGPL-3.0](https://github.com/Audiveris/audiveris/blob/5.10.2/LICENSE). It is downloaded separately, unchanged, and runs as its own program; its complete source code is at [github.com/Audiveris/audiveris/tree/5.10.2](https://github.com/Audiveris/audiveris/tree/5.10.2). Titles and tempo marks are read with the English and Vietnamese data of [Tesseract](https://github.com/tesseract-ocr/tessdata/tree/4.1.0) (Apache-2.0), downloaded from the Tesseract project.
