@@ -232,6 +232,14 @@ Virtuoso does not collect or send any personal data. The only internet access is
 
 ## 📝 Changelog
 
+**1.3.10** — bug fixes for 1.3.9 ("1.3.9 v2")
+- Loop: setting or changing a loop just after point B was played now goes back to A instead of playing on to the end.
+- Choosing a hand that has no notes in the song now says so, instead of calling the song empty.
+- PDFs with Vietnamese (or other non-English) file names can now be scanned on Windows.
+- Songs in a shared folder: when a page was scanned again on the other computer, the original pages reload too.
+- Scanning a page again after lines were added or removed now explains why, and still lets you go on.
+- "Other picture → Paste" only takes pictures; the ‹ › buttons no longer jump around while paused.
+
 **1.3.9** — bars to check, rescanning a page, PDFs, one hand
 - Bars that may have been read wrong are marked (red: probably, amber: maybe) in the editor and on the original pages, with ‹ › to step through them. A corrected line loses its mark.
 - Scan one page again, from the same picture or another one; the other pages and your fixes stay.
