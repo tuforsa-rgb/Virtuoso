@@ -119,7 +119,7 @@ Right-click a line in the sheet editor and choose **Play from this line** to sta
 The first scan downloads the scanner once (about 69 MB, plus 23 MB to read titles and tempo marks). It is [Audiveris](https://github.com/Audiveris/audiveris), free open-source music recognition, and everything runs on your computer — no pages are uploaded anywhere.
 
 > [!TIP]
-> Results are best with clean, straight pages of printed piano music: a full-width screenshot or a PDF works better than a photo taken at an angle. Notes usually come out right; the rhythm can still be off in a few bars. D.S., D.C., To Coda, Fine and the segno/coda signs are read, and the song is written out in playing order (a note at the top of the sheet says what was found). 8va lines are followed to their end, and tempo marks printed later in the song (and rit. / accel. / a tempo) change the tempo there. PDFs are turned into one picture per page, so everything above works for them too.
+> Results are best with clean, straight pages of printed piano music: a full-width screenshot or a PDF works better than a photo taken at an angle. On a small screen (HD / HD+), zoom the sheet in or take half a page at a time — small pictures are read twice to keep the clearer reading, but bigger ones still read best. Notes usually come out right; the rhythm can still be off in a few bars. D.S., D.C., To Coda, Fine and the segno/coda signs are read, and the song is written out in playing order (a note at the top of the sheet says what was found). 8va lines are followed to their end, and tempo marks printed later in the song (and rit. / accel. / a tempo) change the tempo there. PDFs are turned into one picture per page, so everything above works for them too.
 
 ## 🤝 Sharing songs with a friend
 
@@ -231,6 +231,14 @@ In `%AppData%\Virtuoso\Songs`. Click **Open folder** in the app to go there. Uni
 Virtuoso does not collect or send any personal data. The only internet access is the update check, which downloads release information from this page, and — only when you scan sheet music for the first time — the download of the scanner from this page. Scanning itself runs entirely on your computer.
 
 ## 📝 Changelog
+
+**1.3.11** — small screenshots scan better, bug fixes
+- Small screenshots (HD and HD+ screens) scan better: small pages are read two ways and the reading with fewer doubtful bars is kept. On 7 songs captured at HD+, bars that sound right went from 72% to 77%.
+- 8va / 8vb lines the recogniser missed are found from the picture, so whole passages no longer come out an octave off.
+- Phone photos stored sideways are turned upright; dark-mode screenshots (light notes on a dark page) can be scanned; pictures that are too small get a clear tip.
+- "New song" no longer keeps the previous song's loop, pages and marks. Search ignores accents ("con co" finds "Con Cò").
+- Songs titled "Con", "Aux", "Nul"… can be saved on Windows. Deleting "Song.mid" no longer deletes the scanned pages of "Song.txt" beside it. Stray files in a shared folder (Thumbs.db…) are no longer taken for pages.
+- Damaged MIDI and MusicXML files no longer freeze the app; "timewise" MusicXML opens; linking a whole drive (D:\) works.
 
 **1.3.10** — bug fixes for 1.3.9 ("1.3.9 v2")
 - Loop: setting or changing a loop just after point B was played now goes back to A instead of playing on to the end.
