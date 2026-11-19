@@ -19,14 +19,14 @@ Load a sheet or a MIDI file, press **F8** in the game, and listen.
 ---
 
 <p align="center">
-  <img src="assets/screenshot-sheet.png" alt="Virtuoso playing a sheet" width="88%">
+  <img src="assets/screenshot-sheet.png" alt="Virtuoso playing a two-hand sheet, the cursor sweeping through the bar" width="88%">
 </p>
 
 ## ✨ Features
 
 | | |
 |---|---|
-| 🎼 **Sheets** | Paste or import Virtual Piano letter sheets (`.txt`). Three layouts are understood: grid, space-separated and bars (one line = one bar). Settings written at the top of a sheet (`; bpm: 120`) are applied automatically. |
+| 🎼 **Sheets** | Paste or import Virtual Piano letter sheets (`.txt`). Three layouts are understood: grid, space-separated and bars (one line = one bar). Write a bar as an `R:` line with an `L:` line under it and the two hands stay apart, in columns, like a piano score. Settings written at the top of a sheet (`; bpm: 120`) are applied automatically. |
 | 🎹 **MIDI files** | Import `.mid` files, pick the tracks to play, skip drums, and let Virtuoso find the key that fits the 61 in-game keys best. Notes outside the range are moved to the nearest octave. |
 | ⏱️ **Precise timing** | A dedicated scheduler keeps every note on time, even for long songs and when you change the speed in the middle of a song. |
 | ⌨️ **Global hotkeys** | Control playback from inside the game — no need to switch windows. |
@@ -35,11 +35,11 @@ Load a sheet or a MIDI file, press **F8** in the game, and listen.
 | 🔔 **System tray** | Keeps running quietly in the tray; play, pause and stop from the tray menu. |
 | 🔄 **Automatic updates** | Virtuoso tells you when a new version is out and installs it in one click. Every update is digitally signed and checked before it runs. |
 | 📂 **Your own folders** | Click **Open folder** and every sheet and MIDI file in it shows up in the list, sub-folders included. Files stay where they are, and new ones appear by themselves. You can also drag files or folders onto the window. |
-| ✨ **Follow along** | While a song plays, the note being played lights up in the sheet and the editor scrolls with it. An on-screen piano shows which keys are pressed. |
+| ✨ **Follow along** | While a song plays, a cursor sweeps through the bar in time with the music — through both hands' lines at once — the notes being struck light up and the editor scrolls with it. An on-screen piano shows which keys are pressed. |
 | 📷 **Scan sheet music** <sup>beta</sup> | Cut a page of piano sheet music with <kbd>Win</kbd>+<kbd>Shift</kbd>+<kbd>S</kbd> and press <kbd>Ctrl</kbd>+<kbd>V</kbd> in Virtuoso — or drop images or a PDF on the window. Virtuoso reads the notes, D.S./D.C./Coda jumps, 8va lines and tempo changes included, and writes a sheet you can play right away. The original pages sit beside the editor: the bar being edited or played is marked on them, clicking a bar jumps to its line, bars that may be read wrong are marked in red or amber, and any page can be scanned again on its own. |
 | ⏩ **Seek** | Click or drag on the progress bar to jump anywhere in the song — also while it plays into the game. |
 | 🔁 **Loop a part** | Select some lines and click 🔁 to play them over and over, seamlessly — or right-click the time bar to set A and B, or press <kbd>F4</kbd> twice from the game. Nothing selected loops the whole song. |
-| 🤲 **One hand** | Let Virtuoso play only the right or the left hand (split at middle C) and play the other one yourself. |
+| 🤲 **One hand** | Let Virtuoso play only the right or the left hand and play the other one yourself. Two-hand sheets (`R:` / `L:` lines), scans and MusicXML know exactly which hand plays what; MIDI files use their tracks; other sheets are split at middle C — or turned into `R:` / `L:` lines with one right-click. |
 | 🤝 **Share with a friend** | Link a folder you both sync (Google Drive, OneDrive…): sheets you scan into it show up in your friend's Virtuoso by themselves, original pages included. |
 | 🔊 **Listen first** | The speaker button plays the song through your speakers, without sending any keys to the game. |
 | 🧾 **MusicXML** | Import `.musicxml` / `.mxl` files from MuseScore, Finale, Sibelius and others; repeats and 1st/2nd endings are written out. |
@@ -134,6 +134,21 @@ Any `.txt` or `.mid` file either of you puts in the folder appears too, and when
 ## 🎼 Sheet formats
 
 Virtuoso uses the standard 61-key Virtual Piano layout (C2–C7). Lowercase letters and numbers are white keys, Shift + key are black keys, and `[ ]` plays a chord.
+
+<details open>
+<summary><b>Two hands</b> — an <code>R:</code> line (right hand) with an <code>L:</code> line (left hand) under it is one bar</summary>
+
+```
+; bpm: 95
+; mode: bars
+R: J - / - - / - D / J l
+L: ( w / t Y / - - / - -
+
+R: J - / - j / - s / g h
+L: q t / Y i / ( t / Y i
+```
+Both lines of a bar start together; notes in the same column are struck together. Scans and MusicXML files are written this way, in columns. **Hands → Right hand / Left hand** then plays exactly that line. To turn a one-line sheet into `R:` / `L:` lines, right-click the editor → **Split into right / left hand lines** (it splits at middle C; move any note that went to the wrong hand). Works with every layout below.
+</details>
 
 <details>
 <summary><b>Bars</b> — one line is one bar, <code>/</code> splits the beats</summary>
@@ -231,6 +246,13 @@ In `%AppData%\Virtuoso\Songs`. Click **Open folder** in the app to go there. Uni
 Virtuoso does not collect or send any personal data. The only internet access is the update check, which downloads release information from this page, and — only when you scan sheet music for the first time — the download of the scanner from this page. Scanning itself runs entirely on your computer.
 
 ## 📝 Changelog
+
+**1.3.12** — two-hand sheets and a sweeping cursor
+- New sheet layout: each bar is an `R:` line (right hand) with an `L:` line (left hand) under it, in columns like a piano score. Scans and MusicXML imports are written this way.
+- While a song plays, a cursor sweeps through the bar in time with the music, through both hands' lines; the notes of both hands light up together. The compact player shows both lines.
+- **Hands → Right / Left** plays exactly the `R:` or `L:` line; MIDI files with several tracks use their tracks (the lowest one is the left hand).
+- Right-click → **Split into right / left hand lines** turns a one-line sheet into `R:` / `L:` lines.
+- Bars of two-hand sheets count as one everywhere: Start at bar, loops, F4, the original pages, the bars-to-check marks and page rescans.
 
 **1.3.11** — small screenshots scan better, bug fixes
 - Small screenshots (HD and HD+ screens) scan better: small pages are read two ways and the reading with fewer doubtful bars is kept. On 7 songs captured at HD+, bars that sound right went from 72% to 77%.
